@@ -1,9 +1,9 @@
 /** @format */
-
+"use client";
 import React from "react";
 
-const Page = () => {
-  return <div>Page</div>;
+export const page = () => {
+  return <div>about</div>;
 };
 
-export default Page;
+export default page;
