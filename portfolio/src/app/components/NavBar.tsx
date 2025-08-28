@@ -8,11 +8,14 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { useTheme } from "../context/ThemeContext";
 
 const NavBar = () => {
-  const theme = "dark";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-
+  const { theme, toggleTheme } = useTheme();
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   const navMenu = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -40,11 +43,14 @@ const NavBar = () => {
                 {item.label}
               </Link>
             ))}
-            <button>
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full transition-transform duration-500"
+            >
               {theme === "dark" ? (
-                <SunIcon className="h-5 w-5" />
+                <SunIcon className="h-5 w-5  animate-spin text-yellow-500" />
               ) : (
-                <MoonIcon className="h-5 w-5" />
+                <MoonIcon className="h-5 w-5 animate-pulse transform rotate-360 transition-transform duration-900 text-blue-600" />
               )}
             </button>
           </div>
@@ -52,17 +58,20 @@ const NavBar = () => {
           {/* Mobile: Theme + Menu toggle */}
           <div className="flex items-center gap-2 md:hidden">
             {/* Theme button */}
-            <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
               {theme === "dark" ? (
-                <SunIcon className="h-5 w-5" />
+                <SunIcon className="h-5 w-5 animate-spin text-yellow-500" />
               ) : (
-                <MoonIcon className="h-5 w-5" />
+                <MoonIcon className="h-5 w-5 text-blue-600 animate-pulse " />
               )}
             </button>
 
             {/* Menu toggle button */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={toggleMobileMenu}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               {isMobileMenuOpen ? (
