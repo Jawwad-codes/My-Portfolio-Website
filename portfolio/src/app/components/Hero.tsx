@@ -1,9 +1,12 @@
 /** @format */
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
+import { fadeIn, fadeInUp, scaleIn } from "@/utils/animation";
 const Hero = () => {
   const visitingUrls = {
     linkedin: "https://www.linkedin.com/in/jawwad-nadeem-959285266/",
@@ -12,7 +15,11 @@ const Hero = () => {
   return (
     <section className="py-28 container max-w-7xl mx-auto px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="flex items-center flex-col mb-3">
+        <motion.div
+          {...scaleIn}
+          transition={{ delay: 0.2 }}
+          className="flex items-center flex-col mb-3"
+        >
           <Image
             src="/image.jpg"
             alt="portfolio image"
@@ -20,16 +27,28 @@ const Hero = () => {
             height={100}
             className="rounded-full mb-4 w-32 h-32 object-cover  ring-2 dark: ring-primary "
           />
-        </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        </motion.div>
+        <motion.h1
+          {...fadeInUp}
+          transition={{ delay: 0.3 }}
+          className="text-4xl md:text-6xl font-bold mb-6"
+        >
           Hi, I'm
           <span className="text-blue-600"> Jawwad Nadeem</span>
-        </h1>
-        <p className="text-xl md:text-2xl  text-gray-600 dark:text-gray-300 mb-8">
+        </motion.h1>
+        <motion.p
+          {...fadeInUp}
+          transition={{ delay: 0.5 }}
+          className="text-xl md:text-2xl  text-gray-600 dark:text-gray-300 mb-8"
+        >
           Software Engineer | Building Frontend Experiences | Exploring
           Automation
-        </p>
-        <div className="flex justify-center space-x-4 mb-8">
+        </motion.p>
+        <motion.div
+          {...fadeIn}
+          transition={{ delay: 0.6 }}
+          className="flex justify-center space-x-4 mb-8"
+        >
           <Link
             href={visitingUrls.github}
             className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors p-2"
@@ -48,8 +67,8 @@ const Hero = () => {
           >
             <FaTwitter />
           </Link>
-        </div>
-        <div className="flex flex-col md:flex-row justify-center gap-4">
+        </motion.div>
+        <motion.div className="flex flex-col md:flex-row justify-center gap-4">
           <Link
             href="/projects"
             className="bg-primary bg-gradient-to-br text-white inline-block px-6 py-3 rounded-md hover:bg-primary/65 transition-colors"
@@ -68,7 +87,7 @@ const Hero = () => {
           >
             Contact Me
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
