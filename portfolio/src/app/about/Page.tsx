@@ -1,5 +1,6 @@
 /** @format */
 "use client";
+import React from "react";
 import {
   cardHover,
   cardHoverSmall,
@@ -9,7 +10,7 @@ import {
   slideInRight,
 } from "@/utils/animation";
 import { motion } from "framer-motion";
-import React from "react";
+
 import { FaCode, FaGraduationCap, FaLaptopCode } from "react-icons/fa";
 
 export const page = () => {

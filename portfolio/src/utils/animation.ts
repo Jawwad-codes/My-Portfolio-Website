@@ -1,6 +1,6 @@
 /** @format */
 
-const EASE = [0.25, 0.1, 0.25, 1];
+const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 export const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -23,8 +23,8 @@ export const fadeIn = {
 export const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.15, // smoother stagger
-      delayChildren: 0.1, // little delay before start
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
     },
   },
 };
