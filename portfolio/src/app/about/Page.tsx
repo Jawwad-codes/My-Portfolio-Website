@@ -78,7 +78,7 @@ export const page = () => {
             <ul className="text-secondary space-y-2">
               <li>Git / GitHub</li>
               <li>Docker</li>
-              <li>n8n</li>
+
               <li>Trello</li>
               <li>Playwright</li>
             </ul>
