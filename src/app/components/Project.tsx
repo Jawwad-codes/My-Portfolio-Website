@@ -17,7 +17,7 @@ const Project = () => {
         transition={{ delay: 0.2 }}
         className="max-w-3xl mx-auto font-bold text-3xl mb-12 text-center"
       >
-        Projects
+        My <span className="text-primary">Projects</span>
       </motion.h2>
 
       {/* Grid */}
