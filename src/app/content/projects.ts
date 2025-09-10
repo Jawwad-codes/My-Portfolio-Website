@@ -9,7 +9,7 @@ export const projects: Project[] = [
     technologies: ["React.js", "TypeScript", "TailwindCss", "ShadcnUi"],
     githubLink: "https://github.com/Jawwad-codes/KlimateApp",
     demoLink: "https://klimate-app.vercel.app/",
-    image: "/project/klimate.jpg",
+    image: "/project/Klimate.jpg",
   },
   {
     title: "Gemini AI",
